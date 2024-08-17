@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid";
+import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import Image from "next/image";
 import { useStateProvider } from "@/context/StateContext";
 import axios from "axios";
@@ -30,7 +30,7 @@ const Products = () => {
         </div>
 
         <BentoGrid className=" mx-auto">
-          {products.map((item: any) => (
+          {products.map((item) => (
             <BentoGridItem
               key={item.id}
               isPresent={prodIdList.includes(item.id)}
@@ -49,7 +49,7 @@ const Products = () => {
 
 export default Products;
 
-const Skeleton = ({ image }: { image: string }) => (
+const Skeleton = ({ image }) => (
   <div className="h-[8rem] w-full flex">
     <Image
       src={image}

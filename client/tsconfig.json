@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/context/CartContext.jsx", "src/components/ProductCard.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/context/CartContext.jsx", "src/components/ProductCard.jsx", "src/components/Products.jsx"],
   "exclude": ["node_modules"]
 }

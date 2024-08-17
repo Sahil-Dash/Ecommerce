@@ -91,7 +91,7 @@ const SignIn = () => {
                   </button>
                 </div>
                 <p className="text-sm font-light text-gray-500 ">
-                  Don't have an account?{" "}
+                  Dont have an account?
                   <a
                     href="/sign-up"
                     className="font-medium text-slate-200 hover:underline hover:text-black "
