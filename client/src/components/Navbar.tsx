@@ -6,10 +6,18 @@ import { Menu, MenuItem, ProductItem } from "../components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useStateProvider } from "@/context/StateContext";
+import { useRouter } from "next/navigation";
 
 export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   const [{ cart }, dispatch] = useStateProvider();
+  const router = useRouter();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    dispatch({ type: reducerCases.SET_USER, user: null });
+    router.push("/sign-in");
+  };
   return (
     <div
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
@@ -79,6 +87,9 @@ export default function Navbar({ className }: { className?: string }) {
               </div>
             )}
           </MenuItem>
+        </Link>
+        <Link href="/sign-in">
+          <div onClick={handleLogout}>Logout</div>
         </Link>
       </Menu>
     </div>
