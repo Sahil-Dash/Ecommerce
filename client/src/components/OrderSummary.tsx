@@ -43,7 +43,9 @@ const OrderSummary = () => {
 
     toast.success(
       `Order Place, Total Price :- ₹${Math.floor(
-        couponApplied ? originalPrice * 0.15 : originalPrice + 50 + 9
+        couponApplied
+          ? originalPrice - originalPrice * 0.15
+          : originalPrice + 50 + 9
       )}`
     );
     setCouponCode("");
@@ -116,7 +118,7 @@ const OrderSummary = () => {
                 {Math.floor(
                   originalPrice
                     ? couponApplied
-                      ? originalPrice * 0.15
+                      ? originalPrice - originalPrice * 0.15
                       : originalPrice + 9 + 50
                     : 0
                 )}
