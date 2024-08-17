@@ -17,5 +17,5 @@ app.register_blueprint(auth_bp)
 app.register_blueprint(cart_bp)
 
 
-app.run(debug=True)
+
 

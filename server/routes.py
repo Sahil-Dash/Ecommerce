@@ -1,5 +1,5 @@
 from flask import Blueprint
-from auth import signup, signin, get_user
+from auth import signup, signin, get_user, start
 from cart import add_to_cart, get_cart_prods, update_cart_quantity, delete_prod, get_prod_ids, clearCart
 
 
@@ -9,6 +9,7 @@ cart_bp = Blueprint('cart', __name__)
 
 
 # Auth routes
+auth_bp.route('/', methods=['GET'])(start)
 auth_bp.route('/signup', methods=['POST'])(signup)
 auth_bp.route('/signin', methods=['POST'])(signin)
 auth_bp.route('/get-user', methods=['GET'])(get_user)

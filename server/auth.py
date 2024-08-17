@@ -7,6 +7,10 @@ import jwt
 JWT_SECRET="nxjknxkscnksd"
 
 
+
+def start():
+    return jsonify({'message': 'Server is running' , 'status':200})
+
 def signup():
     data = request.get_json()
     username = data.get('username')
