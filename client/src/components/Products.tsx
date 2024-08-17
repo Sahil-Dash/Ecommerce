@@ -13,7 +13,7 @@ const Products = () => {
   useEffect(() => {
     const getProdIds = async () => {
       const response = await axios.get(
-        `http://localhost:5000/get-prod-ids?username=${user?.username}`
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/get-prod-ids?username=${user?.username}`
       );
       console.log(response.data.product_ids);
       setProdIdList(response.data.product_ids);

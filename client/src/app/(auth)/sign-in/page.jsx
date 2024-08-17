@@ -17,7 +17,10 @@ const page = () => {
     const data = { username, password };
     console.log(data);
     try {
-      const response = await axios.post("http://localhost:5000/signin", data);
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/signin`,
+        data
+      );
       // Replace with your API endpoint
       console.log(response.data, response.status);
       if (response.data.status === 200) {

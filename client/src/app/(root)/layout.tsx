@@ -28,7 +28,7 @@ export default function RootLayout({
     const getUserData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/get-user?token=${token}`
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/get-user?token=${token}`
         );
 
         console.log(response.data);
@@ -46,7 +46,7 @@ export default function RootLayout({
   const getCartProds = async (username: string) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/get-cart-prods?username=${username}`
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/get-cart-prods?username=${username}`
       );
 
       if (response.status === 200) {

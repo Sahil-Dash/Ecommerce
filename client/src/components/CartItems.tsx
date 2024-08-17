@@ -23,9 +23,12 @@ const CartItems = ({
 
   const removeFromCart = async () => {
     let data = { username: user?.username, prodId: id };
-    const res = await axios.delete("http://localhost:5000/delete-prod", {
-      data,
-    });
+    const res = await axios.delete(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/delete-prod`,
+      {
+        data,
+      }
+    );
     if (res.status === 200) {
       dispatch({
         type: reducerCases.REMOVE_PRODUCT_FROM_CART,
@@ -38,9 +41,12 @@ const CartItems = ({
     console.log(type);
     let data = { username: user?.username, prodId: id, type: type, qty: qty };
     console.log(data);
-    const res = await axios.put("http://localhost:5000/update-cart-qty", {
-      ...data,
-    });
+    const res = await axios.put(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/update-cart-qty`,
+      {
+        ...data,
+      }
+    );
     if (res.status === 200) {
       dispatch({
         type: reducerCases.UPDATE_PROD_QTY,

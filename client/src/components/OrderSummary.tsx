@@ -37,7 +37,7 @@ const OrderSummary = () => {
     }
 
     let data = { username: user?.username };
-    await axios.delete("http://localhost:5000/clear-cart", {
+    await axios.delete(`${process.env.NEXT_PUBLIC_SERVER_URL}/clear-cart`, {
       data,
     });
 

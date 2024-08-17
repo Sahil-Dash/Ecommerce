@@ -15,7 +15,7 @@ const Cart = () => {
     const getCartProds = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/get-cart-prods?username=${user?.username}`
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/get-cart-prods?username=${user?.username}`
         );
 
         if (response.status === 200) {

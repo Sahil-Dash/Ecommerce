@@ -52,7 +52,10 @@ const page = () => {
       const data = { username, email, password };
       console.log(data);
       try {
-        const response = await axios.post("http://localhost:5000/signup", data);
+        const response = await axios.post(
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/signup`,
+          data
+        );
         // Replace with your API endpoint
         console.log(response.data, response.status);
         if (response.data.status === 200) {

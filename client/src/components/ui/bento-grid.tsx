@@ -67,7 +67,7 @@ export const BentoGridItem = ({
         quantity: 1,
       };
       const response = await axios.post(
-        "http://localhost:5000/add-to-cart",
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/add-to-cart`,
         data
       );
       console.log(response.status);
